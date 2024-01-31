@@ -32,7 +32,7 @@ function PlayerPreview({ address, onReset, label }) {
 
 export default PlayerPreview;
 
-PlayerPreview.PropTypes = {
+PlayerPreview.propTypes = {
   address: PropTypes.string.isRequired,
   onReset: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
