@@ -4,6 +4,8 @@ import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Nav from "./components/Nav";
 import Loading from "./components/Loading";
+import Transactions from "./components/Transactions";
+import Account from "./components/Account";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
@@ -25,6 +27,9 @@ const App = () => {
               <Route path="/" element={<Home />} />
               <Route path="/battle" element={<Battle />} />
               <Route path="/results" element={<Results />} />
+              <Route path="/transactions" element={<Transactions />}>
+                <Route path=":accountId" element={<Account />} />
+              </Route>
               <Route path="*" element={<NoMatch />} />
             </Routes>
           </React.Suspense>
