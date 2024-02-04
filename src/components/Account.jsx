@@ -50,7 +50,6 @@ function AccountApi({ address }) {
         </main>
       </div>
     );
-  console.log(accountQuery.data.status);
   if (accountQuery.data.status === "Bad Request")
     return (
       <div className="bg-white font-montserrat">
@@ -66,7 +65,6 @@ function AccountApi({ address }) {
     );
 
   const transactions = accountQuery.data.result.data;
-  console.log(transactions);
   return (
     <div className="bg-white font-montserrat">
       <main className="mx-auto max-w-7xl overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
