@@ -6,7 +6,7 @@ import Loading from "./Loading";
 import withSearchParams from "./withSearchParams";
 import { Link } from "react-router-dom";
 import React from "react";
-// import { InformationCircleIcon } from "@heroicons/react/24/outline";
+import { InformationCircleIcon } from "@heroicons/react/24/outline";
 
 const Card = ({ instance }) => {
   const { address, name, transactions, domains, favorites, subdomains } =
@@ -22,7 +22,19 @@ const Card = ({ instance }) => {
       <div className="w-full border-t border-gray-300"></div>
       <ul>
         <li className="flex items-center justify-between">
-          <span>Transactions</span> <span>{transactions}</span>
+          <Link
+            to={`/transactions/${address}`}
+            className="hover:underline inline-flex"
+          >
+            Transactions{" "}
+            <div className="align-middle">
+              <InformationCircleIcon
+                className="ml-2 mt-0.5 h-5 w-5 text-gray-700 items-center"
+                aria-hidden="true"
+              />
+            </div>
+          </Link>{" "}
+          <span>{transactions}</span>
         </li>
         <li className="flex items-center justify-between">
           <span>Domains</span> <span>{domains}</span>
