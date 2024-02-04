@@ -12,7 +12,7 @@ function PlayerPreview({ address, onReset, label }) {
         <div className="flex items-center space-x-4 truncate">
           <a
             href={`https://solana.fm/address/${address}`}
-            className="text-blue-600 hover:underline"
+            className="text-blue-600 hover:underline truncate"
             rel="noreferrer"
             target="_blank"
           >
