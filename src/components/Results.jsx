@@ -105,8 +105,8 @@ class Results extends React.Component {
               <Card instance={winner.instance} />
               <p className="flex text-center justify-center items-start gap-4">
                 <span>
-                  {winner.score === loser.score ? "Tie" : "Winner"}{" "}
-                  {winner.score.toLocaleString()}
+                  {winner.score === loser.score ? "Tie" : "Winner"} {"==>"}{" "}
+                  {winner.score.toLocaleString()} points
                 </span>
                 {winner.score !== loser.score && (
                   <svg
@@ -161,8 +161,8 @@ class Results extends React.Component {
               <Card instance={loser.instance} />
               <p className="flex text-center justify-center items-start gap-4">
                 <span>
-                  {winner.score === loser.score ? "Tie" : "Loser"}{" "}
-                  {loser.score.toLocaleString()}
+                  {winner.score === loser.score ? "Tie" : "Loser"} {"==>"}{" "}
+                  {loser.score.toLocaleString()} points
                 </span>
               </p>
             </div>

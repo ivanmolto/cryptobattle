@@ -24,7 +24,11 @@ async function getName(address) {
       options,
     );
     const display = await response.json();
-    var name = display.result.data.friendlyName;
+    if (display.code !== 400) {
+      var name = display.result.data.friendlyName;
+    } else {
+      name = "-";
+    }
     return name;
   } catch (err) {
     return console.error(err);
@@ -48,7 +52,7 @@ async function getTransactions(address) {
     var transactions = display.result.data.length;
     return transactions;
   } catch (err) {
-    return console.error(err);
+    return 0;
   }
 }
 
@@ -66,8 +70,7 @@ async function getDomains(address) {
       options,
     );
     const display = await response.json();
-    console.log(display.result);
-    var domains = display.result.length;
+    var domains = display.result[0].domains.length;
     return domains;
   } catch (err) {
     return console.error(err);
