@@ -61,11 +61,12 @@ The APIs are used here only for having fun while participation in the hackathon.
   To get the favourite domains of an account hash.
 
 - _Get An Account's Subdomains_
+
   `GET` - `https://api.solana.fm/vo/domains/bonfida/subdomains/{hash}`
 
-**This endpoint returns you subdomains that are owned by the given account hash**
+  **This endpoint returns you subdomains that are owned by the given account hash**
 
-To get the subdomains of an account hash.
+  To get the subdomains of an account hash.
 
 ## What are Bonfida Domains
 
@@ -73,12 +74,12 @@ Solana domains are a feature in the Solana blockchain that provides a human-read
 
 ## Tech Stack
 
-- React
-- SolanaFM APIs
-- TailwindCSS
-- React Router
-- React Query
-- Vite
+- [React](https://react.dev/)
+- [SolanaFM](https://solana.fm) APIs
+- [TailwindCSS](https://tailwindcss.com)
+- [React Router](https://reactrouter.com)
+- [React Query](https://tanstack.com/query/v3)
+- [Vite](https://vitejs.dev)
 
 ## React + Vite
 
