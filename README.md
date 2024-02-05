@@ -31,12 +31,14 @@ The APIs are used here only for having fun while participation in the hackathon.
 ## SolanaFM API endpoints used
 
 - _Get a specific account_
+
   `GET` - `https://api.solana.fm/vo/accounts/{hash}`
   **This endpoint returns you the account data related to the account that you queried for given the account hash**
 
-To get the friendly name of an account hash.
+  To get the friendly name of an account hash.
 
 - _Get Transactions Of An Account_
+
   `GET` - `https://api.solana.fm/v0/accounts/{hash}/transactions`
   **Retrieve a list of finalised transactions that the account is involved in**
   Please not that the maximum number of transactions retrieved per batch is 1000
@@ -44,17 +46,19 @@ To get the friendly name of an account hash.
   To get the transactions of an account hash.
 
 - _Get Domain/Subdomains Owned By An Account_
+
   `GET` - `https://api.solana.fm/vo/domains/bonfida/{hash}`
   **This endpoint retrieves all domains and subdomains owned by the provided account hash**
 
   To get the domains of an account hash.
 
 - _Get User's Favourite Domains_
+
   `GET` - `https://api.solana.fm/vo/domains/bonfida/favourites/{hash}`
 
-**This endpoint returns you a list of domains that are set as favourite by the account hash provided**
+  **This endpoint returns you a list of domains that are set as favourite by the account hash provided**
 
-To get the favourite domains of an account hash.
+  To get the favourite domains of an account hash.
 
 - _Get An Account's Subdomains_
   `GET` - `https://api.solana.fm/vo/domains/bonfida/subdomains/{hash}`
