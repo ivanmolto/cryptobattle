@@ -8,7 +8,7 @@ No need to connect any wallet.
 - Surfacing the Signal: Profiling transactions, domains, and subdomains.
 - Discovering opportunities in a friendly way: Performing due diligence while having fun in the Solana ecosystem.
 
-A challenge sponsore by [SolanaFM](https://solana.fm)
+A challenge sponsored by [SolanaFM](https://solana.fm)
 Made for the [Encode x Solana Hackathon](https://www.encode.club/encodesolanahack) sponsored by the [Solana Foundation](https://solana.org/).
 
 ## Live website
@@ -23,13 +23,13 @@ This is the [video pitch that you can find here in the repo](https://github.com/
 
 - Enter a Solana account hash for each player and submit.
   Each player is an instance and we will get the points count for each instance.
-  The points are the sum of the number the transactions, domains, subdomains, and favourite domains.
+  The points are the sum of the number of transactions, domains, subdomains, and favourite domains.
 
-- Click the Battle button and
+- Click the Battle button
 
-- Check the results: the winner and the loser or just a tie. The winner is the player with more points.
+- And check the results: the winner and the loser or just a tie. The winner is the player with more points.
 
-You can also check the latest transactions for each player (instance).
+You can also check the latest transactions for each player.
 
 ## SolanaFM APIs
 
@@ -39,7 +39,7 @@ But to increase the rate limits we have generated our own `API Keys` to authenti
 The API keys carry many privilegees, so be sure to keep them secured!
 Do Your Own Research.
 Do not share, do not save in publicly accessible areas such as GitHub, client-side code 😉, and so forth.
-The APIs are used here only for having fun while participation in the hackathon.
+The APIs are used here only for having fun while participating in the hackathon.
 
 ## SolanaFM API endpoints used
 
@@ -83,7 +83,7 @@ The APIs are used here only for having fun while participation in the hackathon.
 
 ## What are Bonfida Domains
 
-Solana domains are a feature in the Solana blockchain that provides a human-readale way of identifying resources in the network. Instead of using complex addresses, users can register and use domain names to represent their accounts, contracts, or services. This simplifies the process of sending transactions, accessing decentralised applications, and sharing information on the Solana network.
+Solana domains are a feature in the Solana blockchain that provides a human-readable way of identifying resources in the network. Instead of using complex addresses, users can register and use domain names to represent their accounts, contracts, or services. This simplifies the process of sending transactions, accessing decentralised applications, and sharing information on the Solana network.
 
 ## Tech Stack
 
