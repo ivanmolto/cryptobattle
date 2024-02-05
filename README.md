@@ -12,11 +12,23 @@ Made for the [Encode x Solana Hackathon](https://www.encode.club/encodesolanahac
 
 ## Live website
 
-You can find the Crypto Battle Fun live website [here](https://www.crypobattle.fun)
+You can find the Crypto Battle Fun live website at [cryptobattle.fun](https://www.crypobattle.fun)
 
 ## Video pitch
 
 This is the [video pitch that you can find here in the repo] or [you can download it from Pinata.cloud]
+
+## Game Instructions
+
+- Enter a Solana account hash for each player and submit.
+  Each player is an instance and we will get the points count for each instance.
+  The points are the sum of the number the transactions, domains, subdomains, and favourite domains.
+
+- Click the Battle button and
+
+- Check the results: the winner and the loser or just a tie. The winner is the player with more points.
+
+You can also check the latest transactions for each player (instance).
 
 ## SolanaFM APIs
 
