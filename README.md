@@ -17,7 +17,7 @@ You can find the Crypto Battle Fun live website at [cryptobattle.fun](https://ww
 
 ## Video pitch
 
-This is the [video pitch that you can find here in the repo] or [you can download it from Pinata.cloud]
+This is the [video pitch that you can find here in the repo](https://github.com/ivanmolto/cryptobattle/blob/master/cryptobattlefun.mp4) or [you can download it from Pinata.cloud](https://ivanmolto.mypinata.cloud/ipfs/QmdBBBf8TkWxiGnRK8hop2gzLoSdaiE9im8yGH22yD2ssY)
 
 ## Game Instructions
 
