@@ -19,7 +19,7 @@ const Home = () => {
               <span className="hidden block:sm">
                 No need to connect any wallet!
               </span>
-              <br /> Are you ready for a battle with any hash account?
+              <br /> Are you ready for a battle against any hash account?
             </p>
             <div className="mx-auto mt-5 max-w-md sm:flex sm:justify-center md:mt-8">
               <div className="rounded-md drop-shadow-md">

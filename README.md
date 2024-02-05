@@ -1,18 +1,19 @@
 # CRYPTO BATTLE
 
 Solana APIs are Fun!
-A casual game for Solana nerds. Are you ready for a battle with any hash account?
+A casual game for Solana nerds. Are you ready for a battle against any hash account?
+No need to connect any wallet.
 
 - Fast, open and free: Lightning fast Solana on-chain data. Open and free forever.
 - Surfacing the Signal: Profiling transactions, domains, and subdomains.
-- Discovering opportunities in a friendly way: Performing due diligence while having fun on the Solana ecosystem.
+- Discovering opportunities in a friendly way: Performing due diligence while having fun in the Solana ecosystem.
 
 A challenge sponsore by [SolanaFM](https://solana.fm)
 Made for the [Encode x Solana Hackathon](https://www.encode.club/encodesolanahack) sponsored by the [Solana Foundation](https://solana.org/).
 
 ## Live website
 
-You can find the Crypto Battle Fun live website at [cryptobattle.fun](https://www.crypobattle.fun)
+You can find the Crypto Battle Fun live website at [cryptobattle.fun](https://www.cryptobattle.fun)
 
 ## Video pitch
 

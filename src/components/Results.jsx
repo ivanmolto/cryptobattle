@@ -40,7 +40,7 @@ const Card = ({ instance }) => {
           <span>Domains</span> <span>{domains}</span>
         </li>
         <li className="flex items-center justify-between">
-          <span>Favorite Domains</span> <span>{favorites}</span>
+          <span>Favourite Domains</span> <span>{favorites}</span>
         </li>
         <li className="flex items-center justify-between">
           <span>Subdomains</span> <span>{subdomains}</span>
