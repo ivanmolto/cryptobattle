@@ -4,14 +4,14 @@ import { XMarkIcon } from "@heroicons/react/20/solid";
 
 function PlayerPreview({ address, onReset, label }) {
   return (
-    <article className="border border-1 rounded-2xl bg-blue-100 text-base p-8">
+    <article className="border border-1 rounded-2xl bg-red-100 text-base p-8">
       <label htmlFor="address" className="text-base font-medium text-gray-700">
         {label}
       </label>
       <div className="mt-1 flex items-center justify-between">
         <div className="flex items-center space-x-4 truncate">
           <a
-            href={`https://solana.fm/address/${address}`}
+            href={`https://snowscan.xyz/address/${address}`}
             className="text-blue-600 hover:underline truncate"
             rel="noreferrer"
             target="_blank"
