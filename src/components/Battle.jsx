@@ -21,7 +21,7 @@ class PlayerInput extends React.Component {
   render() {
     return (
       <form
-        className="border border-1 rounded-2xl bg-blue-100 text-base p-8"
+        className="border border-1 rounded-2xl bg-red-100 text-base p-8"
         onSubmit={this.handleSubmit}
       >
         <label
