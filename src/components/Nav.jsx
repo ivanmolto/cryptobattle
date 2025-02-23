@@ -6,7 +6,7 @@ const Nav = () => {
   return (
     <>
       <div className="min-h-full font-montserrat">
-        <Disclosure as="nav" className="bg-blue-600">
+        <Disclosure as="nav" className="bg-[#ff394a]">
           {({ open }) => (
             <>
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -48,8 +48,8 @@ const Nav = () => {
                           className={({ isActive }) =>
                             "px-3 py-2 rounded-md text-sm font-medium" +
                             (isActive
-                              ? " bg-blue-800 text-white"
-                              : " text-white hover:bg-blue-400 hover:bg-opacity-75")
+                              ? " bg-red-700 text-white"
+                              : " text-white hover:bg-red-400 hover:bg-opacity-75")
                           }
                         >
                           Home
@@ -59,8 +59,8 @@ const Nav = () => {
                           className={({ isActive }) =>
                             "px-3 py-2 rounded-md text-sm font-medium" +
                             (isActive
-                              ? " bg-blue-800 text-white"
-                              : " text-white hover:bg-blue-400 hover:bg-opacity-75")
+                              ? " bg-red-700 text-white"
+                              : " text-white hover:bg-red-400 hover:bg-opacity-75")
                           }
                         >
                           Battle
@@ -96,8 +96,8 @@ const Nav = () => {
                     className={({ isActive }) =>
                       "block px-3 py-2 rounded-md text-sm font-medium" +
                       (isActive
-                        ? " bg-blue-800 text-white"
-                        : " text-white hover:bg-blue-400 hover:bg-opacity-75")
+                        ? " bg-red-700 text-white"
+                        : " text-white hover:bg-red-400 hover:bg-opacity-75")
                     }
                   >
                     Home
@@ -107,8 +107,8 @@ const Nav = () => {
                     className={({ isActive }) =>
                       "block px-3 py-2 rounded-md text-sm font-medium" +
                       (isActive
-                        ? " bg-blue-800 text-white"
-                        : " text-white hover:bg-blue-400 hover:bg-opacity-75")
+                        ? " bg-red-700 text-white"
+                        : " text-white hover:bg-red-400 hover:bg-opacity-75")
                     }
                   >
                     Battle
