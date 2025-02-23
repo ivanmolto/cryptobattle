@@ -146,28 +146,6 @@ const Footer = () => {
             </a>
           ))}
         </div>
-        <p className="mt-8 text-center text-base text-gray-500">
-          Made with love for the{" "}
-          <span>
-            <a
-              href="https://www.encode.club/encodesolanahack"
-              rel="noreferrer"
-              target="_blank"
-              className="text-blue-600 hover:underline"
-            >
-              Encode x Solana Hackathon
-            </a>
-          </span>{" "}
-          sponsored by the{" "}
-          <a
-            href="https://solana.org"
-            rel="noreferrer"
-            target="_blank"
-            className="text-blue-600 hover:underline"
-          >
-            Solana Foundation
-          </a>
-        </p>
       </div>
     </footer>
   );
