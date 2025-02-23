@@ -25,7 +25,7 @@ const Home = () => {
               <div className="rounded-md drop-shadow-md">
                 <Link
                   to="/battle"
-                  className="flex w-full items-center justify-center rounded-md border border-1 bg-[ff394a] px-8 py-3 text-base font-medium text-white hover:bg-red-700 md:py-4 md:px-10 md:text-lg"
+                  className="flex w-full items-center justify-center rounded-md border border-1 bg-[#ff394a] px-8 py-3 text-base font-medium text-white hover:bg-red-700 md:py-4 md:px-10 md:text-lg"
                 >
                   Get started
                 </Link>
