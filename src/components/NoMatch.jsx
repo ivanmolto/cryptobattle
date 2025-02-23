@@ -6,7 +6,7 @@ const NoMatch = () => {
       <div className="mt-28 mb-2 min-h-full bg-white px-4 py-16 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8 font-montserrat">
         <div className="mx-auto max-w-max">
           <main className="sm:flex">
-            <p className="text-4xl font-bold tracking-tight text-blue-600 sm:text-5xl font-montserrat">
+            <p className="text-4xl font-bold tracking-tight text-[#ff394a] sm:text-5xl font-montserrat">
               404
             </p>
             <div className="sm:ml-6">
@@ -21,7 +21,7 @@ const NoMatch = () => {
               <div className="mt-10 flex space-x-3 sm:border-l sm:border-transparent sm:pl-6">
                 <Link
                   to="/"
-                  className="font-montserrat inline-flex items-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  className="font-montserrat inline-flex items-center rounded-md border border-transparent bg-[#ff394a] px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
                 >
                   Go back home
                 </Link>
