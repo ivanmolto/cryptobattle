@@ -113,7 +113,7 @@ export default class Battle extends React.Component {
                   pathname: "/results",
                   search: `?playerOne=${playerOne}&playerTwo=${playerTwo}`,
                 }}
-                className={`items-center justify-center rounded-md border border-1 bg-blue-600 px-8 py-3 text-base font-medium text-white hover:bg-blue-700 md:py-6 md:px-10 md:text-lg ${
+                className={`items-center justify-center rounded-md border border-1 bg-[#ff394a] px-8 py-3 text-base font-medium text-white hover:bg-blue-700 md:py-6 md:px-10 md:text-lg ${
                   disabled ? "disabled" : ""
                 }`}
               >
