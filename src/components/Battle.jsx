@@ -37,7 +37,7 @@ class PlayerInput extends React.Component {
               type="text"
               name="address"
               id="address"
-              placeholder="account hash"
+              placeholder="wallet address"
               autoComplete="off"
               value={this.state.address}
               onChange={this.handleChange}
