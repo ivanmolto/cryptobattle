@@ -8,7 +8,7 @@ const Home = () => {
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
               <span className="block xl:inline font-montserrat">
-                Avalanche APIs
+                AvaCloud APIs
               </span>{" "}
               <span className="block text-[#ff394a] xl:inline font-montserrat">
                 are Fun
