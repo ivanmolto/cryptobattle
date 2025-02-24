@@ -1,5 +1,77 @@
-function calculateScore(transactions, domains, favorites, subdomains) {
-  return transactions + domains + favorites + subdomains;
+import { AvaCloudSDK } from "@avalabs/avacloud-sdk";
+
+const avaCloudSDK = new AvaCloudSDK({
+  apiKey: import.meta.env.AVACLOUD_API_KEY,
+  chainId: "43114", // Avalanche Mainnet
+  network: "mainnet",
+});
+
+async function getBlockHeight() {
+  const result = await avaCloudSDK.data.evm.blocks.getLatestBlocks({
+    pageSize: 1,
+  });
+  return result.result.blocks[0].blockNumber;
+}
+
+async function listErc20Balances(address, blockNumber) {
+  const result = await avaCloudSDK.data.evm.balances.listErc20Balances({
+    blockNumber: blockNumber,
+    pageSize: 10,
+    address: address,
+  });
+  const balances = [];
+  for await (const page of result) {
+    balances.push(...page.result.erc20TokenBalances);
+  }
+  return balances;
+}
+
+async function fetchERC20Balances(address) {
+  const blockResult = await getBlockHeight();
+  const blockNumber = blockResult;
+  const balanceResult = await listErc20Balances(address, blockNumber);
+  const balances = balanceResult;
+  return balances.length;
+}
+
+async function listERC721Balances(address) {
+  const result = await avaCloudSDK.data.evm.balances.listErc721Balances({
+    address,
+    pageSize: 10,
+  });
+  const balances = [];
+  for await (const page of result) {
+    balances.push(...page.result.erc721TokenBalances);
+  }
+  return balances;
+}
+
+async function listERC1155Balances(address) {
+  const result = await avaCloudSDK.data.evm.balances.listErc1155Balances({
+    pageSize: 10,
+    address: address,
+  });
+  const balances = [];
+  for await (const page of result) {
+    balances.push(...page.result.erc1155TokenBalances);
+  }
+  return balances;
+}
+
+async function fetchERC721Balances(address) {
+  const result = await listERC721Balances(address);
+  const balances = result;
+  return balances.length;
+}
+
+async function fetchERC1155Balances(address) {
+  const result = await listERC1155Balances(address);
+  const balances = result;
+  return balances.length;
+}
+
+function calculateScore(erc20s, erc721s, erc1155s) {
+  return erc20s + erc721s + erc1155s;
 }
 
 function sortPlayers(players) {
@@ -10,127 +82,27 @@ function getAddress(address) {
   return address;
 }
 
-async function getName(address) {
-  const options = {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-      ApiKey: import.meta.env.VITE_SOLANAFM_API_KEY,
-    },
-  };
-  try {
-    const response = await fetch(
-      `https://api.solana.fm/v0/accounts/${address}`,
-      options,
-    );
-    const display = await response.json();
-    if (display.code !== 400) {
-      var name = display.result.data.friendlyName;
-    } else {
-      name = "-";
-    }
-    return name;
-  } catch (err) {
-    return console.error(err);
-  }
-}
-
-async function getTransactions(address) {
-  const options = {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-      ApiKey: import.meta.env.VITE_SOLANAFM_API_KEY,
-    },
-  };
-  try {
-    const response = await fetch(
-      `https://api.solana.fm/v0/accounts/${address}/transactions?page=1`,
-      options,
-    );
-    const display = await response.json();
-    var transactions = display.result.data.length;
-    return transactions;
-  } catch (err) {
-    return 0;
-  }
-}
-
-async function getDomains(address) {
-  const options = {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-      ApiKey: import.meta.env.VITE_SOLANAFM_API_KEY,
-    },
-  };
-  try {
-    const response = await fetch(
-      `https://api.solana.fm/v0/domains/bonfida/${address}`,
-      options,
-    );
-    const display = await response.json();
-    var domains = display.result[0].domains.length;
-    return domains;
-  } catch (err) {
-    return console.error(err);
-  }
-}
-
-async function getFavorites(address) {
-  const options = {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-      ApiKey: import.meta.env.VITE_SOLANAFM_API_KEY,
-    },
-  };
-  try {
-    const response = await fetch(
-      `https://api.solana.fm/v0/domains/bonfida/favourites/${address}`,
-      options,
-    );
-    const display = await response.json();
-    var favorites = display.result.domains.length;
-    return favorites;
-  } catch (err) {
-    return console.error(err);
-  }
-}
-
-async function getSubdomains(address) {
-  const options = { method: "GET", headers: { accept: "application/json" } };
-  try {
-    const response = await fetch(
-      `https://api.solana.fm/v0/domains/bonfida/subdomains/${address}`,
-      options,
-    );
-    const display = await response.json();
-    var subdomains = display.result.subdomains.length;
-    return subdomains;
-  } catch (err) {
-    return console.error(err);
-  }
+function getAvatar(address) {
+  var avatar_url = `https://cdn.stamp.fyi/avatar/${address}?s=256`;
+  return avatar_url;
 }
 
 function getUserData(player) {
   return Promise.all([
     getAddress(player),
-    getName(player),
-    getTransactions(player),
-    getDomains(player),
-    getFavorites(player),
-    getSubdomains(player),
-  ]).then(([address, name, transactions, domains, favorites, subdomains]) => ({
+    getAvatar(player),
+    fetchERC20Balances(player),
+    fetchERC721Balances(player),
+    fetchERC1155Balances(player),
+  ]).then(([address, avatar_url, erc20s, erc721s, erc1155s]) => ({
     instance: {
       address,
-      name,
-      transactions,
-      domains,
-      favorites,
-      subdomains,
+      avatar_url,
+      erc20s,
+      erc721s,
+      erc1155s,
     },
-    score: calculateScore(transactions, domains, favorites, subdomains),
+    score: calculateScore(erc20s, erc721s, erc1155s),
   }));
 }
 
