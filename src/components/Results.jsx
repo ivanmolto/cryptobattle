@@ -6,44 +6,35 @@ import Loading from "./Loading";
 import withSearchParams from "./withSearchParams";
 import { Link } from "react-router-dom";
 import React from "react";
-import { InformationCircleIcon } from "@heroicons/react/24/outline";
+// import { InformationCircleIcon } from "@heroicons/react/24/outline";
 
 const Card = ({ instance }) => {
-  const { address, name, transactions, domains, favorites, subdomains } =
-    instance;
+  const { address, avatar_url, erc20s, erc721s, erc1155s } = instance;
   return (
-    <div className="border border-1 rounded-2xl bg-blue-100 text-base p-8">
+    <div className="border border-1 rounded-2xl bg-red-100 text-base p-8">
       <div className="flex flex-row justify-between">
         <div className="flex flex-col gap-2 w-96 lg:w-11/12">
           <div className="text-lg font-bold truncate">{address}</div>
-          <div className="font-semibold italic">{name || "-"}</div>
+          <div className="font-semibold italic">Notes</div>
         </div>
+        <img
+          className="rounded h-14 w-14"
+          width={56}
+          height={56}
+          src={avatar_url}
+          alt={`Avatar for ${address}`}
+        />
       </div>
       <div className="w-full border-t border-gray-300"></div>
       <ul>
         <li className="flex items-center justify-between">
-          <Link
-            to={`/transactions/${address}`}
-            className="hover:underline inline-flex"
-          >
-            Transactions{" "}
-            <div className="align-middle">
-              <InformationCircleIcon
-                className="ml-2 mt-0.5 h-5 w-5 text-gray-700 items-center"
-                aria-hidden="true"
-              />
-            </div>
-          </Link>{" "}
-          <span>{transactions}</span>
+          <span>ERC20s</span> <span>{erc20s}</span>
         </li>
         <li className="flex items-center justify-between">
-          <span>Domains</span> <span>{domains}</span>
+          <span>ERC721s</span> <span>{erc721s}</span>
         </li>
         <li className="flex items-center justify-between">
-          <span>Favourite Domains</span> <span>{favorites}</span>
-        </li>
-        <li className="flex items-center justify-between">
-          <span>Subdomains</span> <span>{subdomains}</span>
+          <span>ERC1155s</span> <span>{erc1155s}</span>
         </li>
       </ul>
     </div>
@@ -53,11 +44,10 @@ const Card = ({ instance }) => {
 Card.propTypes = {
   instance: PropTypes.shape({
     address: PropTypes.string,
-    name: PropTypes.string,
-    transactions: PropTypes.number,
-    domains: PropTypes.number,
-    favorites: PropTypes.number,
-    subdomains: PropTypes.number,
+    avatar_url: PropTypes.string.isRequired,
+    erc20s: PropTypes.number,
+    erc721s: PropTypes.number,
+    erc1155s: PropTypes.number,
   }).isRequired,
 };
 
@@ -106,7 +96,7 @@ class Results extends React.Component {
               Results
             </div>
             <Link
-              className="items-center justify-center rounded-md border border-1 bg-blue-600 px-6 py-2 text-sm font-medium text-white hover:bg-blue-700 md:text-base mb-4"
+              className="items-center justify-center rounded-md border border-1 bg-[#ff394a] px-6 py-2 text-sm font-medium text-white hover:bg-red-700 md:text-base mb-4"
               to="/battle"
             >
               Reset
