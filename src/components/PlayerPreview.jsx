@@ -10,6 +10,13 @@ function PlayerPreview({ address, onReset, label }) {
       </label>
       <div className="mt-1 flex items-center justify-between">
         <div className="flex items-center space-x-4 truncate">
+          <img
+            width={32}
+            height={32}
+            className="rounded-full inline-block"
+            src={`https://cdn.stamp.fyi/avatar/${address}?s=100`}
+            alt={`Avatar for ${address}`}
+          />
           <a
             href={`https://snowscan.xyz/address/${address}`}
             className="text-blue-600 hover:underline truncate"
